@@ -11,10 +11,8 @@
         <meta property="og:url" content="">
         <meta property="og:image" content="">
 
-        <link rel="manifest" href="site.webmanifest">
         <link rel="apple-touch-icon" href="icon.png">
 
-        <link rel="stylesheet" href="css/normalize.css">
         <link rel="stylesheet" href="css/main.css">
         <!-- imported font-awesome for header icon -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -94,20 +92,26 @@
             <section id="contact">
                 <h1>Contact</h1>
                 <p>Fill out the form below to submit a trade request!</p>
-                <div class="form-div">
-                    <form action="">
-                        <label for="name">Name</label>
-                        <input type="text" id="name" placeholder="Name">
+                <div class="form-div" id="form-div">
+                    <form name="contact-form">
+                        <label for="name" >Name</label>
+                        <input type="text" id="name" placeholder="Name" name="name">
 
                         <label for="email">Email</label>
-                        <input type="email" id="email" placeholder="Email">
+                        <input type="email" id="email" placeholder="Email" name="email">
 
                         <label for="trade-details">Trade Details</label>
                         <!-- <input type="text" id="trade-details" class="trade-details" placeholder="Enter information about the trade."> -->
-                        <textarea name="text-area" id="trade-details" class="trade-details" placeholder="Enter information about cards you want to trade."></textarea>
+                        <textarea name="text-area" name="trade-details" id="trade-details" class="trade-details" placeholder="Enter information about cards you want to trade."></textarea>
                         
-                        <button id="submit-button">Submit</button>
+                        <button id="submit-button" onclick="submit_form()" type="button">Submit</button>
+                        <div class="thank-you-popup" id="thank-you-popup">
+                            <a href="#contact" onclick="exit_thank_you()"><i class="fa fa-times-circle-o"></i></a>
+                            <label for="thank-you" class="thank-you">Thank You!</label>
+                            <p>Your request has been sent!</p>
+                        </div>
                     </form>
+                    
                 </div>
             </section>
         </div>

@@ -20,3 +20,26 @@ document.addEventListener('DOMContentLoaded', function() {
         })
     })
 })
+
+function submit_form() {
+    console.log("HERE");
+
+    const name = document.forms['contact-form']['name'].value;
+    const email = document.forms['contact-form']['email'].value;
+    const message = document.forms['contact-form']['trade-details'].value;
+
+    
+    console.log(`name: ${name} email: ${email} text: ${message}`);
+
+    if(name == "" || email == "" || message == "") {
+        alert("Please fill out the entire form!");
+        return;
+    }
+
+    document.getElementById('thank-you-popup').style.display = "block";
+    document.getElementById('form-div').style.position = "relative";
+}
+
+function exit_thank_you() {
+    document.getElementById('thank-you-popup').style.display = "none";
+}
